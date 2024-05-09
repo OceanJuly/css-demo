@@ -1,0 +1,35 @@
+$btnColors: #409eff, #67c23a, #8b590f, #f54343, #6c6d71;
+
+@for $i from 1 through length($btnColors) {
+  .btn.btn-#{$i} {
+    $color: nth($btnColors, $i);
+    background-color: $color;
+    color: #fff;
+    &:hover {
+      background-color: lighten($color, 10%);
+    }
+    &:active {
+     background-color: darken($color, 10%);
+    }
+    &:disabled {
+      background-color: lighten($color, 20%);
+    }
+  }
+}
+
+.opacity-btn-wrap {
+  .btn {
+    padding: 8px 6px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-1 {
+    $color: #409eff;
+    background-color: $color;
+    color: #fff;
+    &:hover {
+      background-color: lighten($color, 10%);
+    }
+  }
+}
