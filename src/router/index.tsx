@@ -3,6 +3,7 @@ import {RouteObject} from "react-router-dom";
 import AnimationFace from "@/views/animation-face"
 import LessChange from '@/views/theme-change/less-change'
 import OpacityBtn from '@/views/opacity-btn'
+import MulTagOverflow from '@/views/mulTagOverflow'
 
 
 const lazyLoad = (children: ReactNode) => {
@@ -38,6 +39,10 @@ const routes: RouteObject[] = [
     {
         path: 'test',
         element: <test />
+    },
+    {
+        path: 'mulTagOverflow',
+        element: <MulTagOverflow />
     }
 ]
 

@@ -1,0 +1,63 @@
+.mul-tag-overflow-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .container {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    outline: 2px solid #9747FF;
+    gap: 5px;
+    overflow: hidden;
+    &::after {
+      content: "+"var(--num);
+      padding: .2em .5em;
+      background-color: #FFE8A3;
+      color: #191919;
+      border-radius: 4px;
+    }
+    .tag-wrap {
+      position: relative;
+      display: flex;
+      gap: 5px;
+      padding: 5px;
+      overflow: hidden;
+      counter-reset: var(--num);
+      animation: checkScroll;
+      animation-timeline: scroll(x self);
+      margin-right: -46px;
+      .tag {
+        padding: .2em .5em;
+        background-color: #c49ef5;
+        color: #fff;
+        border-radius: 4px;
+        counter-increment: var(--num) 1;
+        animation: appear;
+        animation-timeline: view(inline);
+        animation-range: contain;
+      }
+    }
+  }
+  .slider-wrap {
+    margin-top: 36px;
+    width: 120px;
+  }
+}
+
+@keyframes appear {
+  to {
+    background-color: #4d47ff;
+  }
+}
+
+@keyframes checkScroll {
+  from, to {
+    -webkit-mask: linear-gradient(to right, #fff calc(100% - 30px), transparent);
+    margin-right: 0;
+  }
+}
