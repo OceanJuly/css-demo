@@ -1,0 +1,42 @@
+@btnColors: #944dcc, #67c23a, #8b590f, #f54343, #6c6d71;
+
+.lbtn {
+    each(@btnColors, {
+        &.lbtn-@{index} {
+            color: #fff;
+            background-color: @value;
+            padding: 8px 6px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                // background-color: lighten(@value, 10%);
+                background-color: rgba(@value, .8);
+            }
+            &:active {
+                background-color: darken(@value, 10%);
+            }
+            &:disabled {
+                // background-color: lighten(@value, 20%);
+                background-color: rgba(@value, .6);
+                cursor: not-allowed;
+            }
+        }
+    })
+}
+
+.test-btn {
+    color: #fff;
+    padding: 8px 6px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #944dcc;
+    &:hover {
+        background-color: rgba(148, 77, 204, .8);
+    }
+    &:disabled {
+        background-color: rgba(148, 77, 204, .6);
+        cursor: not-allowed;
+    }
+}

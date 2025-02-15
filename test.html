@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>
+    <input id="inputRef" type="number" />
+</label>
+<script>
+    const input = document.querySelector('#inputRef')
+    input.addEventListener('change', (val) => {
+        console.log('change');
+        console.log(val);
+    })
+    input.addEventListener('input', (val) => {
+        console.log('input');
+        console.log(val);
+    })
+</script>
+</body>
+</html>
